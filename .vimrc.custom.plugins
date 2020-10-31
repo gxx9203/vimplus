@@ -14,7 +14,10 @@
 " Plug 'gorodinskiy/vim-coloresque'
 " Plug 'vim-scripts/DoxygenToolkit.vim'
 
-" 卸载/禁用~/.vimrc里的默认插件
-" UnPlug 'chxuan/prepare-code'
+Plug 'edkolev/tmuxline.vim'
 
+Plug 'tmux-plugins/vim-tmux'
+"卸载/禁用~/.vimrc里的默认插件
+" UnPlug 'chxuan/prepare-code'
+UnPlug 'Valloric/YouCompleteMe'
 
