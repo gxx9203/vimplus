@@ -16,6 +16,13 @@ An automatic configuration program for vim
 
 ## 安装
 
+
+#### Ubuntu vimplus
+
+    git clone https://github.com/gxx9203/vimplus.git ~/.vimplus
+    cd ~/.vimplus
+    ./install.sh //不加sudo
+
 ### Mac OS X
 
 #### 安装[HomeBrew][3]
