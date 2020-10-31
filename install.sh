@@ -78,6 +78,21 @@ function backup_vimrc_file()
     fi
 }
 
+#备份原有的.tmux.conf文件
+function backup_tmux_file()
+{
+    old_tmux=$HOME"/.tmux.conf"
+    is_exist=$(is_exist_file $old_tmux)
+    if [ $is_exist == 1 ]; then
+        time=$(get_datetime)
+        backup_tmux=$old_tmux"_bak_"$time
+        read -p "Find "$old_tmux" already exists,backup "$old_tmux" to "$backup_tmux"? [Y/N] " ch
+        if [[ $ch == "Y" ]] || [[ $ch == "y" ]]; then
+            cp $old_tmux $backup_tmux
+        fi
+    fi
+}
+
 #备份原有的.vimrc.custom.plugins文件
 function backup_vimrc_custom_plugins_file()
 {
@@ -378,6 +393,9 @@ function copy_files()
 
     rm -rf ~/.vim/autoload
     ln -s ${PWD}/autoload ~/.vim
+    
+    rm -rf ~/.tmux.conf
+    cp ${PWD}/.tmux.conf ~
 }
 
 # 安装mac平台字体
@@ -422,14 +440,14 @@ function install_ycm()
 
     cd ~/.vim/plugged/YouCompleteMe
 
-    read -p "Please choose to compile ycm with python2 or python3, if there is a problem with the current selection, please choose another one. [2/3] " version
-    if [[ $version == "2" ]]; then
-        echo "Compile ycm with python2."
-        python2.7 ./install.py --clang-completer
-    else
+   # read -p "Please choose to compile ycm with python2 or python3, if there is a problem with the current selection, please choose another one. [2/3] " version
+   # if [[ $version == "2" ]]; then
+   #     echo "Compile ycm with python2."
+   #     python2.7 ./install.py --clang-completer
+   # else
         echo "Compile ycm with python3."
         python3 ./install.py --clang-completer
-    fi
+   # fi
 }
 
 # 在android上安装ycm插件
@@ -507,6 +525,7 @@ function begin_install_vimplus()
 function install_vimplus_on_ubuntu()
 {
     backup_vimrc_and_vim
+    backup_tmux_file
     install_prepare_software_on_ubuntu
     begin_install_vimplus
 }
@@ -515,6 +534,7 @@ function install_vimplus_on_ubuntu()
 function install_vimplus_on_ubuntu_like()
 {
     backup_vimrc_and_vim
+    backup_tmux_file
     install_prepare_software_on_ubuntu_like
     begin_install_vimplus
 }
