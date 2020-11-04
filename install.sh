@@ -91,6 +91,18 @@ function backup_tmux_file()
             cp $old_tmux $backup_tmux
         fi
     fi
+
+    old_profile=$HOME"/.bashrc_profile"
+    is_exist=$(is_exist_file $old_profile)
+    if [ $is_exist == 1 ]; then
+        time=$(get_datetime)
+        backup_profile=$old_profile"_bak_"$time
+        read -p "Find "$old_profile" already exists,backup "$old_profile" to "$backup_profile"? [Y/N] " ch
+        if [[ $ch == "Y" ]] || [[ $ch == "y" ]]; then
+            cp $old_profile $backup_profile
+        fi
+    fi
+
 }
 
 #备份原有的.vimrc.custom.plugins文件
@@ -394,8 +406,12 @@ function copy_files()
     rm -rf ~/.vim/autoload
     ln -s ${PWD}/autoload ~/.vim
     
+
     rm -rf ~/.tmux.conf
     cp ${PWD}/.tmux.conf ~
+
+    rm ~rf ~/.bashrf_profile
+    cp ${PWD}/.bashrc_profile ~
 }
 
 # 安装mac平台字体
@@ -471,7 +487,7 @@ function install_ycm_on_android()
 function print_logo()
 {
     color="$(tput setaf 6)"
-    normal="$(tput sgr0)"
+   normal="$(tput sgr0)"
     printf "${color}"
     echo '        __                __           '
     echo '__   __/_/___ ___  ____  / /_  _______ '

@@ -1,0 +1,8 @@
+
+# git 自动补齐 
+if [ -f ~/.vimplus/.git-completion.bash  ]; then
+        . ~/.vimplus/.git-completion.bash
+fi
+
+# ls 带色彩
+alias ls="ls --color"
