@@ -6,3 +6,6 @@ fi
 
 # ls 带色彩
 alias ls="ls --color"
+
+# terninal中显示短路径
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
