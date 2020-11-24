@@ -410,7 +410,7 @@ function copy_files()
     rm -rf ~/.tmux.conf
     cp ${PWD}/.tmux.conf ~
 
-    rm ~rf ~/.bashrf_profile
+    rm ~rf ~/.bashrc_profile
     cp ${PWD}/.bashrc_profile ~
 }
 
