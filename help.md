@@ -19,6 +19,8 @@
 | `<leader>G`         | 显示当前文件提交记录                      |
 | `<leader>gg`        | 显示当前文件在某个commit下的完整内容      |
 | `<leader>ff`        | 语法错误自动修复(FixIt)                   |
+| `<leader>pa`        | 拷贝不自动缩进                            |
+| `<leader>npa`       | 恢复自动缩进                              |
 | `<c-p>`             | 切换到上一个buffer                        |
 | `<c-n>`             | 切换到下一个buffer                        |
 | `<leader>d`         | 删除当前buffer                            |
@@ -50,6 +52,8 @@
 | `<leader>vc`        | 快速编辑~/.vimrc.custom.config文件        |
 | `<leader>h`         | 打开vimplus帮助文档                       |
 | `<leader>H`         | 打开当前光标所在单词的vim帮助文档         |
+| `<leader>y`         | 使用ycm自动补齐                           |
+| `<leader>Y`         | 禁止ycm自动补齐                           |
 | `<leader><leader>t` | 生成try-catch代码块                       |
 | `<leader><leader>y` | 复制当前选中到系统剪切板                  |
 | `<leader><leader>i` | 安装插件                                  |

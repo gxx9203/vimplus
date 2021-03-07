@@ -18,5 +18,5 @@ Plug 'edkolev/tmuxline.vim'
 
 "卸载/禁用~/.vimrc里的默认插件
 " UnPlug 'chxuan/prepare-code'
-UnPlug 'Valloric/YouCompleteMe'
+" UnPlug 'Valloric/YouCompleteMe'
 
